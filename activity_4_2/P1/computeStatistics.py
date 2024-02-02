@@ -84,7 +84,11 @@ class Statistics():
                 mode_count += 1
         # If the number of modes re more than 10% of the total numbers, return a message
         if mode_count > 0.1 * self.count:
-            print(f"Warning: There are {mode_count} modes for the {self.count} ({mode_count/self.count * 100:.2f}%) numbers in the data")
+            print(f"""
+                Warning:
+                There are {mode_count} modes for the {self.count}
+                ({mode_count/self.count * 100:.2f}%) numbers in
+                the data""")
             return "NA"
         # Return the mode(s)
         return mode
