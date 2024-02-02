@@ -4,6 +4,9 @@ Compute basic statistics from a list of numbers.
 import time
 import sys
 
+# Get the time the script was started
+START = time.time()
+
 
 class Statistics():
     """
@@ -141,7 +144,7 @@ class Statistics():
             "mean": mean,
             "median": median,
             "mode": mode,
-            "standard deviation": standard_deviation,
+            "sd": standard_deviation,
             "variance": variance,
         }
 
@@ -170,13 +173,20 @@ def main(file):
             stats = Statistics(numbers)
             # Get the statistics
             statistics = stats.get_statistics()
-            # Print the statistics
-            print(statistics)
+            # Print the statistics and save them into a file
+            with open("StatisticsResults.txt", "w", encoding='utf-8') as f:
+                # Loop through the statistics
+                for key, value in statistics.items():
+                    # Print the statistics
+                    print(f"{key.upper()}:\t{value}")
+                    # Write the statistics to a file
+                    f.write(f"{key.upper()}:\t{value}\n")
+                # Print the time the script took to run
+                print(f"TIME: {time.time() - START:.4f} seconds")
+                f.write(f"TIME: {time.time() - START:.4f} seconds\n")
 
 # Run a main function when the script is run (with the file name as an argument)
 if __name__ == "__main__":
-    # Get the time the script was started
-    start = time.time()
     # Get the argument next to the script name
     # If there are no arguments, the length of sys.argv is 1
     if len(sys.argv) > 1:
@@ -188,5 +198,3 @@ if __name__ == "__main__":
         print("No arguments were given")
     # Call the main function with the file name
     main(arg)
-    # Get the time the script ended
-    end = time.time()
