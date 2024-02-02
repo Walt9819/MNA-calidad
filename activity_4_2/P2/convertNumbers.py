@@ -15,6 +15,52 @@ class Converter():
     def __init__(self, numbers) -> None:
         self.numbers = numbers
 
+    # Convert to binary
+    def _to_binary(self, number):
+        """Convert a number to binary."""
+        # iterate over the number and divide by 2
+        binary = ""
+        negative = False
+        # If the number is 0, return 0
+        if number == 0:
+            return "0"
+        # If number is negative, compute the binary of the positive number and add a minus sign
+        if number < 0:
+            negative = True
+            number = abs(number)
+        # Compute the binary represenation with 2 as the base
+        while number > 0:
+            remainder = number % 2
+            binary = str(remainder) + binary
+            number = number // 2
+        # If the number was negative, add a minus sign
+        if negative:
+            binary = "1" + binary
+        return binary
+    
+    # Convert to hexadecimal
+    def _to_hexadecimal(self, number):
+        """Convert a number to hexadecimal."""
+        # Create a dictionary to store the hexadecimal values
+        hex_values = {10: "A", 11: "B", 12: "C", 13: "D", 14: "E", 15: "F"}
+        # Create a string to store the hexadecimal number
+        hexadecimal = ""
+        # If the number is 0, return 0
+        if number == 0:
+            return "0"
+        # If the number is negative, return the hexadecimal representation of the positive number with a minus sign
+        if number < 0:
+            number = abs(number)
+            hexadecimal = "-"
+        # Iterate over the number and divide by 16
+        while number > 0:
+            remainder = number % 16
+            if remainder > 9:
+                remainder = hex_values[remainder]
+            hexadecimal = str(remainder) + hexadecimal
+            number = number // 16
+        return hexadecimal
+
     def get_conversions(self):
         """Convert the numbers to binary and hexadecimal."""
         # Create a dictionary to store the conversions
