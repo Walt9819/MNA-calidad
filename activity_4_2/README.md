@@ -5,9 +5,21 @@
 
 #### P1
 [Script de python ejecutable (compute_statistics.py)](P1/compute_statistics.py)
+Ejemplo de ejecución:
+```
+python compute_statistics.py TC1.txt
+```
 
 #### P2
 [Script de python ejecutable (convert_numbers.py)](P2/convert_numbers.py)
+Ejemplo de ejecución:
+```
+python convert_numbers.py TC1.txt
+```
 
 #### P3
 [Script de python ejecutable (word_count.py)](P3/word_count.py)
+Ejemplo de ejecución:
+```
+python word_count.py TC1.txt
+```
