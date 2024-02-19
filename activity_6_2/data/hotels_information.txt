@@ -61,3 +61,24 @@
 61,Hotel ABC,This is a test hotel
 62,Hotel ABC,This is a test hotel
 63,Hotel ABC,This is a test hotel
+64,Hotel ABC,This is a test hotel
+66,Hotel ABC,This is a test hotel
+66,Hotel ABC,This is a test hotel
+67,Hotel ABC,This is a test hotel
+68,Hotel ABC,This is a test hotel
+70,Hotel ABC,This is a test hotel
+70,Hotel ABC,This is a test hotel
+71,Hotel ABC,This is a test hotel
+72,Hotel ABC,This is a test hotel
+73,New Hotel Name,Updated information
+74,Hotel ABC,This is a test hotel
+75,Hotel ABC,This is a test hotel
+76,Hotel ABC,This is a test hotel
+77,Hotel ABC,This is a test hotel
+78,Hotel ABC,This is a test hotel
+79,Hotel ABC,This is a test hotel
+80,Hotel ABC,This is a test hotel
+81,Hotel ABC,This is a test hotel
+82,Hotel ABC,This is a test hotel
+83,Hotel ABC,This is a test hotel
+84,Hotel ABC,This is a test hotel

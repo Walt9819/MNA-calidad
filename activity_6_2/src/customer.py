@@ -85,12 +85,13 @@ class CustomerPersistentStorage:
         """
         Retrieve customers information from the database (text file)
         """
+        p = self.path
         # Find the file and check if it exists
-        if not check_file_existence(self.path):
+        if not check_file_existence(p):
             return None
         # All lines must be read
-        with open(self.path, "r", encoding='utf-8') as file:
-            for i, line in enumerate(file):
+        with open(p, "r", encoding='utf-8') as f:
+            for i, line in enumerate(f):
                 v = get_values(i, line)
                 if v is not None:
                     c_id, name, information = v

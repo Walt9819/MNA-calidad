@@ -72,13 +72,15 @@ class HotelPersistentStorage:
         """
         Retrieve hotels information from the database (text file)
         """
-        if not check_file_existence(self.path):
+        p = self.path
+        # Check if file exists
+        if check_file_existence(p) is False:
             return None
-        with open(self.path, "r", encoding='utf-8') as file:
-            for i, line in enumerate(file):
-                v = get_values(i, line)
-                if v is not None:
-                    h_id, name, information = v
+        # Read the file if exists and get the hotels
+        with open(p, "r", encoding='utf-8') as f:
+            for j, line in enumerate(f):
+                if not get_values(j, line) is None:
+                    h_id, name, information = get_values(j, line)
                     self.hotels.append(Hotel(name, information, hotel_id=h_id))
         return self.hotels
 
