@@ -1,0 +1,21 @@
+1,Hotel ABC,This is a test hotel
+3,Hotel ABC,This is a test hotel
+3,Hotel ABC,This is a test hotel
+4,Hotel ABC,This is a test hotel
+5,Hotel ABC,This is a test hotel
+7,Hotel ABC,This is a test hotel
+7,Hotel ABC,This is a test hotel
+8,Hotel ABC,This is a test hotel
+9,Hotel ABC,This is a test hotel
+10,New Hotel Name,Updated information
+11,Hotel ABC,This is a test hotel
+12,Hotel ABC,This is a test hotel
+13,Hotel ABC,This is a test hotel
+14,Hotel ABC,This is a test hotel
+15,Hotel ABC,This is a test hotel
+16,Hotel ABC,This is a test hotel
+17,Hotel ABC,This is a test hotel
+18,Hotel ABC,This is a test hotel
+19,Hotel ABC,This is a test hotel
+20,Hotel ABC,This is a test hotel
+21,Hotel ABC,This is a test hotel
