@@ -91,9 +91,11 @@ class CustomerPersistentStorage:
         # All lines must be read
         with open(self.path, "r", encoding='utf-8') as file:
             for i, line in enumerate(file):
-                c_id, name, information = get_values(i, line)
-                self.customers.append(
-                    Customer(name, information, customer_id=c_id))
+                v = get_values(i, line)
+                if v is not None:
+                    c_id, name, information = v
+                    self.customers.append(
+                        Customer(name, information, customer_id=c_id))
         return self.customers
 
 

@@ -59,18 +59,6 @@ class HotelPersistentStorage:
             for hot in self.hotels:
                 file.write(f"{hot.hotel_id},{hot.name},{hot.information}\n")
 
-    def get_hotels(self):
-        """
-        Retrieve hotels information from the database (text file)
-        """
-        if not check_file_existence(self.path):
-            return None
-        with open(self.path, "r", encoding='utf-8') as file:
-            for i, line in enumerate(file):
-                h_id, name, information = get_values(i, line)
-                self.hotels.append(Hotel(name, information, hotel_id=h_id))
-        return self.hotels
-
     def get_hotel_by_id(self, hotel_id):
         """
         Get a hotel by its ID.
@@ -79,6 +67,20 @@ class HotelPersistentStorage:
             if hotel.hotel_id == hotel_id:
                 return hotel
         return None
+
+    def get_hotels(self):
+        """
+        Retrieve hotels information from the database (text file)
+        """
+        if not check_file_existence(self.path):
+            return None
+        with open(self.path, "r", encoding='utf-8') as file:
+            for i, line in enumerate(file):
+                v = get_values(i, line)
+                if v is not None:
+                    h_id, name, information = v
+                    self.hotels.append(Hotel(name, information, hotel_id=h_id))
+        return self.hotels
 
     def add_hotel(self, hotel):
         """

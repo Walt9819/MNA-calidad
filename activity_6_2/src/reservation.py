@@ -2,6 +2,7 @@
 Represent and save reservations information to the database.
 """
 
+import os
 from src.hotel import HOTELS
 from src.customer import CUSTOMERS
 from src.utilities import check_file_existence, get_values
@@ -66,12 +67,14 @@ class ReservationPersistentStorage:
         # Read the file if exists and get the reservations
         with open(self.path, "r", encoding='utf-8') as file:
             for i, line in enumerate(file):
-                reservation_id, customer_id, hotel_id = get_values(i, line)
-                customer = CUSTOMERS.get_customer_by_id(customer_id)
-                hotel = HOTELS.get_hotel_by_id(hotel_id)
-                self.reservations.append(
-                    Reservation(customer, hotel, reservation_id=reservation_id)
-                    )
+                v = get_values(i, line)
+                if v is not None:
+                    reservation_id, customer_id, hotel_id = v
+                    customer = CUSTOMERS.get_customer_by_id(customer_id)
+                    hotel = HOTELS.get_hotel_by_id(hotel_id)
+                    self.reservations.append(
+                        Reservation(customer, hotel, reservation_id=reservation_id)
+                        )
         return self.reservations
 
     def get_reservation_by_id(self, reservation_id):
